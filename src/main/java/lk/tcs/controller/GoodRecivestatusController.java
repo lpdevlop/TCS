@@ -1,0 +1,31 @@
+package lk.tcs.controller;
+
+import lk.tcs.dao.GoodreciveStatusDao;
+import lk.tcs.entity.Gooodrecivestatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+public class GoodRecivestatusController {
+
+
+    @Autowired
+    GoodreciveStatusDao grsdao;
+
+    @RequestMapping(value="goodstatus/list", method= RequestMethod.GET, produces = "application/json")
+    public List<Gooodrecivestatus> goodrecivestatus(){return grsdao.list();}
+
+
+
+
+
+
+}
+
+
+
+
